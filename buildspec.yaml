@@ -4,14 +4,3 @@ phases:
     commands:
       - echo Logging into ECR
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username project3user --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
-  build:
-    commands:
-      - echo Starting build at `date`
-      - echo Building the Docker image...
-      - docker build -t 992180240141.dkr.ecr.us-east-1.amazonaws.com/coworking-app:latest .
-      #- docker tag ${IMAGE_REPO_NAME}:latest 992180240141.dkr.ecr.us-east-1.amazonaws.com/coworking-app:latest
-  post_build:
-    commands:
-      - echo Completed build at `date`
-      - echo Pushing the Docker image...
-      - docker push 992180240141.dkr.ecr.us-east-1.amazonaws.com/coworking-app:latest
