@@ -3,4 +3,4 @@ phases:
   pre_build:
     commands:
       - echo Logging into ECR
-      - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username project3user --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+      - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username project3user --password-stdin 992180240141.dkr.ecr.us-east-1.amazonaws.com/coworking-app
